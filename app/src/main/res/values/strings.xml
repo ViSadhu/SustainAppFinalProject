@@ -14,4 +14,7 @@
     <string name="settings_title">Settings</string>
     <string name="push_notifications_label">Push Notifications</string>
     <string name="change_display_name">Change Display Name</string>
+    <string name="one_last_step">One Last Step</string>
+    <string name="permission_message">We need some permissions to continue</string>
+    <string name="grant_permissions">Grant Permissions</string>
 </resources>

@@ -37,14 +37,12 @@ public class LoginActivity extends AppCompatActivity {
         // Set focus on the display name text field
         binding.etDisplayname.requestFocus();
 
+        // Name validation on button click
         binding.btnContinue.setOnClickListener(v -> {
 
             // Validate the display name
             if (binding.etDisplayname.getText().toString().isEmpty()) {
                 binding.etDisplayname.setError("Display name is required");
-            }
-            else if (binding.etDisplayname.getText().toString().length() < 4) {
-                binding.etDisplayname.setError("Display name must be at least 4 characters");
             }
             else {
                 // Save the display name in shared preferences
@@ -54,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                 editor.apply();
 
                 // Start the main activity and finish the login activity
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, RequestPermissionsActivity.class);
                 startActivity(intent);
                 finish();
             }
