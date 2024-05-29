@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="16dp"
+    android:orientation="vertical"
+    tools:context=".ui.notifications.SettingsFragment">
+
+    <TextView
+        android:id="@+id/text_notifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="@string/settings_title"
+        android:textSize="28sp"
+        android:textStyle="italic" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_notifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/push_notifications_label" />
+
+    <TextView
+        android:id="@+id/tv_changename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="16dp"
+        android:text="@string/change_display_name"
+        android:clickable="true"
+        android:textAppearance="@android:style/TextAppearance.Material"
+        android:fontFamily="sans-serif"
+        android:textSize="14sp"/>
+</LinearLayout>

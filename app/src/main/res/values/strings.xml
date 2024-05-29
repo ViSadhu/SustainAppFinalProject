@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Vihang</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="welcome_title">Welcome!</string>
+    <string name="welcome_message">Let\'s get you started!</string>
+    <string name="name_hint">What should I call you?</string>
+    <string name="text_continue">Continue</string>
+    <string name="name_message">This name will be used across the app so choose wisely!</string>
+    <string name="home_welcome">Welcome %1$s!</string>
+    <string name="fun_fact">Fun Fact</string>
+    <string name="fun_fact_body">%1$s</string>
+    <string name="settings_title">Settings</string>
+    <string name="push_notifications_label">Push Notifications</string>
+    <string name="change_display_name">Change Display Name</string>
+</resources>
