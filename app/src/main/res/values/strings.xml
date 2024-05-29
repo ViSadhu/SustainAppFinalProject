@@ -17,4 +17,9 @@
     <string name="one_last_step">One Last Step</string>
     <string name="permission_message">We need some permissions to continue</string>
     <string name="grant_permissions">Grant Permissions</string>
+    <string name="recycling_guides">Recycling Guides</string>
+    <string name="general_recycling">General Recycling</string>
+    <string name="recycling_plastics">Recycling Plastics</string>
+    <string name="acceptable_items">Acceptable Items</string>
+    <string name="unacceptable_items">Unacceptable items</string>
 </resources>
