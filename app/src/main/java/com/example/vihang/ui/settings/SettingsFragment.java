@@ -46,7 +46,7 @@ public class SettingsFragment extends Fragment {
             ChangeNameFragment changeNameFrag= new ChangeNameFragment();
 
             getActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(((ViewGroup) Objects.requireNonNull(getView()).getParent()).getId() , changeNameFrag, "findThisFragment")
+                    .replace(((ViewGroup) requireView().getParent()).getId() , changeNameFrag, "findThisFragment")
                     .addToBackStack(null)
                     .commit();
         });

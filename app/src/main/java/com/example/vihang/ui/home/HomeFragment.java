@@ -3,7 +3,9 @@ package com.example.vihang.ui.home;
 import static android.content.Context.MODE_PRIVATE;
 import static com.example.vihang.MainActivity.PREFS_NAME;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -45,6 +47,15 @@ public class HomeFragment extends Fragment {
 
         binding.tvHometitle.setText(getString(R.string.home_welcome, preferences.getString("displayName", "User")));
         binding.tvFunfactcontent.setText(randomFact);
+
+        binding.cardRecyclingcenters.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://www.google.ca/maps/search/recycling+center/"));
+            startActivity(intent);
+
+        });
 
         return root;
     }
