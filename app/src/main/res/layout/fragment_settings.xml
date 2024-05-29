@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_marginHorizontal="16dp"
     android:orientation="vertical"
-    tools:context=".ui.notifications.SettingsFragment">
+    tools:context=".ui.settings.SettingsFragment">
 
     <TextView
         android:id="@+id/text_notifications"
@@ -21,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:checked="true"
         android:text="@string/push_notifications_label" />
 
     <TextView

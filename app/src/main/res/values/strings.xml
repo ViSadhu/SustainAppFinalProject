@@ -22,4 +22,6 @@
     <string name="recycling_plastics">Recycling Plastics</string>
     <string name="acceptable_items">Acceptable Items</string>
     <string name="unacceptable_items">Unacceptable items</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

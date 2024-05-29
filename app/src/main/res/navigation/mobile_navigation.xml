@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_guides"
-        android:name="com.example.vihang.ui.dashboard.GuidesFragment"
+        android:name="com.example.vihang.ui.guides.GuidesFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_guides" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.vihang.ui.notifications.SettingsFragment"
+        android:name="com.example.vihang.ui.settings.SettingsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_settings" />
 </navigation>

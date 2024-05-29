@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.dashboard.GuidesFragment">
+    tools:context=".ui.guides.GuidesFragment">
 
     <TextView
         android:id="@+id/tv_guidestitle"
@@ -17,6 +17,7 @@
         android:textSize="28sp"
         android:textStyle="italic" />
 
+<!--Grid Layout code used from https://gist.github.com/sharifulislam52/c684342978fff817c76cc3ec86348d5e -->
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
