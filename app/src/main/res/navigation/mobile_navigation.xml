@@ -15,11 +15,37 @@
         android:id="@+id/navigation_guides"
         android:name="com.example.vihang.ui.guides.GuidesFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_guides" />
+        tools:layout="@layout/fragment_guides" >
+        <action
+            android:id="@+id/navigate_to_guideDetailsFragment"
+            app:destination="@id/guideDetailsFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_settings"
         android:name="com.example.vihang.ui.settings.SettingsFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/navigate_to_changeNameFragment"
+            app:destination="@id/changeNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeNameFragment"
+        android:name="com.example.vihang.ChangeNameFragment"
+        android:label="fragment_change_name"
+        tools:layout="@layout/fragment_change_name" >
+        <action
+            android:id="@+id/navigate_to_settings"
+            app:destination="@id/navigation_settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/guideDetailsFragment"
+        android:name="com.example.vihang.GuideDetailsFragment"
+        android:label="fragment_guide_details"
+        tools:layout="@layout/fragment_guide_details" >
+        <action
+            android:id="@+id/navigate_to_navigation_guides"
+            app:destination="@id/navigation_guides" />
+    </fragment>
 </navigation>

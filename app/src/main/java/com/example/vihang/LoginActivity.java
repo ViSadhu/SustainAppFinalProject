@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.btnContinue.setOnClickListener(v -> {
 
             // Validate the display name
-            if (binding.etDisplayname.getText().toString().isEmpty()) {
+            if (Objects.requireNonNull(binding.etDisplayname.getText()).toString().isEmpty()) {
                 binding.etDisplayname.setError("Display name is required");
             }
             else {
@@ -55,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, RequestPermissionsActivity.class);
                 startActivity(intent);
                 finish();
+
             }
         });
     }

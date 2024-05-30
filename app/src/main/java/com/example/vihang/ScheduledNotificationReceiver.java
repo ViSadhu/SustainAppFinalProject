@@ -29,7 +29,7 @@ public class ScheduledNotificationReceiver extends BroadcastReceiver {
         DBHelper dbHelper = new DBHelper(context);
 
         if (dbHelper.getFactsCount() == 0) {
-            dbHelper.addTestingFacts();
+            dbHelper.addFacts();
         }
 
         // Create the notification

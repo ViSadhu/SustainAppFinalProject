@@ -24,4 +24,10 @@
     <string name="unacceptable_items">Unacceptable items</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recycling_tip">Recycling Tip</string>
+    <string name="nearby_recycling_centers">Nearby Recycling Centers</string>
+    <string name="change_display_name_title">Change Display Name</string>
+    <string name="change_name_hint">What\'s your new name?</string>
+    <string name="submit_button">Submit Button</string>
+    <string name="un_sdg">United Nations SDG</string>
 </resources>

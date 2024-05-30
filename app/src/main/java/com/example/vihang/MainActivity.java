@@ -14,7 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
@@ -26,8 +26,8 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-
-    boolean pushNotificationEnabled = false;
+    NavController navController;
+    SharedPreferences preferences;
 
     public static final String PREFS_NAME = "Vihang";
     protected static String displayName;
@@ -43,16 +43,22 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_guides, R.id.navigation_notifications)
+                R.id.navigation_home, R.id.navigation_guides, R.id.navigation_settings)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+        // Declaring the host fragment
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.nav_host_fragment_activity_main);
+
+        // Check if the host fragment is null
+        assert navHostFragment != null;
+        navController = navHostFragment.getNavController();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         // Hide the action bar
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
         // fetch the user's name from SharedPreferences
         displayName = preferences.getString("displayName", "");
@@ -62,16 +68,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Schedule the notifications
         scheduleNotifications();
-
     }
 
-    private void scheduleNotifications() {
+    public void scheduleNotifications() {
 
         Log.d("Vihang", "Scheduling notifications...");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             // Check if the user has granted the notification permission
-            if(notificationPermissionGranted()) {
+            if(notificationPermissionGranted() && isPushNotificationEnabled()) {
 
                 // Create an intent to start the ScheduledNotificationReceiver
                 Intent intent = new Intent(MainActivity.this, ScheduledNotificationReceiver.class);
@@ -98,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // Check if the user has granted the notification permission
     @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     private boolean notificationPermissionGranted() {
         return checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED;
@@ -116,5 +122,18 @@ public class MainActivity extends AppCompatActivity {
                     "Welcome " + displayName + "!", Snackbar.LENGTH_LONG)
                     .setAnchorView(R.id.nav_view).show();
         }
+    }
+
+    // NavController,
+    // Android Developers Documentation
+    // https://developer.android.com/reference/androidx/navigation/NavController#navigate(int)
+    public void changeFragment(int id) { navController.navigate(id); }
+
+    public void returnToPreviousFragment() { navController.popBackStack(); }
+
+    // Check if the user has enabled push notifications
+    private boolean isPushNotificationEnabled() {
+        Log.d("MAIN", "isPushNotificationEnabled: " + preferences.getBoolean("pushNotifications", true));
+        return preferences.getBoolean("pushNotifications", true);
     }
 }
