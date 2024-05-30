@@ -16,7 +16,7 @@ import com.example.vihang.ui.SharedViewModel;
 public class GuideDetailsFragment extends Fragment {
 
     FragmentGuideDetailsBinding binding;
-    private SharedViewModel viewModel;
+
     public GuideDetailsFragment() {
         // Required empty public constructor
     }
@@ -28,13 +28,13 @@ public class GuideDetailsFragment extends Fragment {
         binding = FragmentGuideDetailsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        // Initialize the shared ViewModel
+        SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
+        // Observe the selected item and load the URL in the WebView
         final WebView webView = binding.wvGuide;
-
-        viewModel.getSelectedItem().observe(getViewLifecycleOwner(), item -> {
-            webView.loadUrl(item.getUrl());
-        });
+        viewModel.getSelectedItem().observe(getViewLifecycleOwner(), item ->
+                webView.loadUrl(item.getUrl()));
 
         return root;
     }

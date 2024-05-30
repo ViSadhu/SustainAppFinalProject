@@ -33,11 +33,9 @@ public class RequestPermissionsActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
 
         // Request permissions
-        binding.btnGrantpermissions.setOnClickListener(v -> {
-
-            requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 101);
-
-        });
+        binding.btnGrantpermissions.setOnClickListener(v ->
+            requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 101)
+        );
     }
 
     @Override

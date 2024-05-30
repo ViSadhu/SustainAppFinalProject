@@ -13,6 +13,7 @@ import androidx.core.app.NotificationCompat;
 public class ScheduledNotificationReceiver extends BroadcastReceiver {
 
     // The implementation for Scheduled Notifications was taken from the following link:
+    // YouTube,
     // https://youtu.be/nl-dheVpt8o?si=yveTK3pN5OrGiIgZ&t=2m21s
 
     // Store the channel ID for the notification
@@ -50,9 +51,6 @@ public class ScheduledNotificationReceiver extends BroadcastReceiver {
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent);
-
-        Log.d("ScheduledNotificationReceiver", "notification: " + notificationTitle);
-        Log.d("ScheduledNotificationReceiver", "notificationText: " + notificationText);
 
         // Create a notification channel if it doesn't exist
         NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, "Daily Facts",

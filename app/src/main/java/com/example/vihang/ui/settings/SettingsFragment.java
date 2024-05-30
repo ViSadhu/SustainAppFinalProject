@@ -66,11 +66,9 @@ public class SettingsFragment extends Fragment {
 
         });
 
-        binding.tvChangename.setOnClickListener(view -> {
-
-            ((MainActivity) requireActivity()).changeFragment(R.id.navigate_to_changeNameFragment);
-
-        });
+        binding.tvChangename.setOnClickListener(view ->
+            ((MainActivity) requireActivity()).changeFragment(R.id.navigate_to_changeNameFragment)
+        );
 
         return root;
     }

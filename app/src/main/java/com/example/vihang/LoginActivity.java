@@ -38,26 +38,31 @@ public class LoginActivity extends AppCompatActivity {
         binding.etDisplayname.requestFocus();
 
         // Name validation on button click
-        binding.btnContinue.setOnClickListener(v -> {
+        binding.btnContinue.setOnClickListener( v -> validateAndContinue() );
+    }
 
-            // Validate the display name
-            if (Objects.requireNonNull(binding.etDisplayname.getText()).toString().isEmpty()) {
-                binding.etDisplayname.setError("Display name is required");
-            }
-            else {
-                // Save the display name in shared preferences
-                SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("displayName", binding.etDisplayname.getText().toString());
-                editor.apply();
+    private void validateAndContinue() {
+        // Validate the display name
+        // Check if the display name is empty
+        if (Objects.requireNonNull(binding.etDisplayname.getText()).toString().isEmpty()) {
+            binding.etDisplayname.setError("Display name is required");
+        }
+        // Check if the display name contains numbers using regex
+        if (Objects.requireNonNull(binding.etDisplayname.getText()).toString().matches(".*\\\\d.*")) {
+            binding.etDisplayname.setError("Display name cannot contain numbers");
+        }
+        else {
+            // Save the display name in shared preferences
+            SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("displayName", binding.etDisplayname.getText().toString());
+            editor.apply();
 
-                // Start the main activity and finish the login activity
-                Intent intent = new Intent(this, RequestPermissionsActivity.class);
-                startActivity(intent);
-                finish();
-
-            }
-        });
+            // Start the main activity and finish the login activity
+            Intent intent = new Intent(this, RequestPermissionsActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
 }

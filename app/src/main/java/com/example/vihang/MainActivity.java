@@ -127,13 +127,15 @@ public class MainActivity extends AppCompatActivity {
     // NavController,
     // Android Developers Documentation
     // https://developer.android.com/reference/androidx/navigation/NavController#navigate(int)
+
+    // method to change fragments
     public void changeFragment(int id) { navController.navigate(id); }
 
+    // method to return to the previous fragment
     public void returnToPreviousFragment() { navController.popBackStack(); }
 
     // Check if the user has enabled push notifications
     private boolean isPushNotificationEnabled() {
-        Log.d("MAIN", "isPushNotificationEnabled: " + preferences.getBoolean("pushNotifications", true));
         return preferences.getBoolean("pushNotifications", true);
     }
 }
