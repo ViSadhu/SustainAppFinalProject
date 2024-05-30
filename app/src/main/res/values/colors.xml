@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#33C173</color>
+    <color name="beige">#FFF9D5</color>
+    <color name="platinum">#F4F4F6</color>
 </resources>

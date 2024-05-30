@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:fontFamily="sans-serif-condensed-light"
-        android:text="@string/change_display_name_title"
+        android:text="@string/change_display_name_label"
         android:textSize="28sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,21 +28,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_changenametitle">
+        app:layout_constraintTop_toBottomOf="@+id/tv_changenametitle"
+        app:layout_constraintVertical_chainStyle="spread">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_changename"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/change_name_hint" />
+            android:hint="@string/change_name_hint"
+            android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_changeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp"
+        android:layout_marginBottom="0dp"
         android:backgroundTint="@color/primary"
         android:clickable="true"
         android:contentDescription="@string/submit_button"

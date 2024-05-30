@@ -55,7 +55,7 @@ public class ChangeNameFragment extends Fragment {
             binding.etChangename.setError("Display name is required");
         }
         // Display name cannot contain numbers
-        if (Objects.requireNonNull(binding.etChangename.getText()).toString().matches(".*\\\\d.*")) {
+        else if (Objects.requireNonNull(binding.etChangename.getText()).toString().matches(".*\\d.*")) {
             binding.etChangename.setError("Display name cannot contain numbers");
         }
         else {

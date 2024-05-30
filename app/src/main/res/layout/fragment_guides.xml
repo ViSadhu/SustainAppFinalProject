@@ -33,11 +33,14 @@
             android:id="@+id/card_generalrecycling"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/platinum"
             android:clickable="true"
             android:layout_margin="16dp"
+            app:layout_columnWeight="0.5"
             app:cardElevation="8dp"
             app:cardCornerRadius="16dp" >
 
+            <!--Vector Source: SVG REPO, https://www.svgrepo.com/svg/352392/recycle-->
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -61,11 +64,14 @@
             android:id="@+id/card_plasticrecycling"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/platinum"
             android:clickable="true"
             android:layout_margin="16dp"
+            app:layout_columnWeight="0.5"
             app:cardElevation="8dp"
             app:cardCornerRadius="16dp" >
 
+            <!--Vector Source: SVG Repo, https://www.svgrepo.com/svg/465884/plastic-bottle-2-->
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -89,13 +95,16 @@
             android:id="@+id/card_acceptableitems"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/platinum"
             android:clickable="true"
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            app:layout_columnWeight="0.5"
             app:cardElevation="8dp"
             app:cardCornerRadius="16dp" >
 
+            <!--Vector Source, SVG Repo, https://www.svgrepo.com/svg/488418/tick-circle-->
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -119,13 +128,16 @@
             android:id="@+id/card_untied_nations_sdg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/platinum"
             android:clickable="true"
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            app:layout_columnWeight="0.5"
             app:cardElevation="8dp"
             app:cardCornerRadius="16dp" >
 
+            <!--Vector Source: SVG Repo, https://www.svgrepo.com/svg/519056/samsung-global-goals-->
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"

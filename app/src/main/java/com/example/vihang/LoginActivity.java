@@ -48,20 +48,20 @@ public class LoginActivity extends AppCompatActivity {
             binding.etDisplayname.setError("Display name is required");
         }
         // Check if the display name contains numbers using regex
-        if (Objects.requireNonNull(binding.etDisplayname.getText()).toString().matches(".*\\\\d.*")) {
+        else if (Objects.requireNonNull(binding.etDisplayname.getText()).toString().matches(".*\\d.*")) {
             binding.etDisplayname.setError("Display name cannot contain numbers");
         }
         else {
             // Save the display name in shared preferences
-            SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("displayName", binding.etDisplayname.getText().toString());
-            editor.apply();
+                SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("displayName", binding.etDisplayname.getText().toString());
+                editor.apply();
 
-            // Start the main activity and finish the login activity
-            Intent intent = new Intent(this, RequestPermissionsActivity.class);
-            startActivity(intent);
-            finish();
+                // Start the main activity and finish the login activity
+                Intent intent = new Intent(this, RequestPermissionsActivity.class);
+                startActivity(intent);
+                finish();
         }
     }
 

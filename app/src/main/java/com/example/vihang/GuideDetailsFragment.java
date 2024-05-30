@@ -33,6 +33,13 @@ public class GuideDetailsFragment extends Fragment {
 
         // Observe the selected item and load the URL in the WebView
         final WebView webView = binding.wvGuide;
+
+        // Disable long click on the WebView
+        webView.setOnLongClickListener(v -> true);
+
+        // Disable haptic feedback
+        webView.setHapticFeedbackEnabled(false);
+
         viewModel.getSelectedItem().observe(getViewLifecycleOwner(), item ->
                 webView.loadUrl(item.getUrl()));
 
