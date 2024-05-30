@@ -29,15 +29,13 @@
         app:rowCount="3">
 
         <androidx.cardview.widget.CardView
-            id="@+id/card_generalrecycling"
+            android:id="@+id/card_generalrecycling"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="3dp"
-            app:cardCornerRadius="3dp" >
+            android:layout_margin="16dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="16dp" >
 
             <ImageView
                 android:layout_width="150dp"
@@ -61,11 +59,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_margin="16dp"
             app:cardElevation="8dp"
-            app:cardCornerRadius="8dp" >
+            app:cardCornerRadius="16dp" >
 
             <ImageView
                 android:layout_width="150dp"
@@ -93,9 +89,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            app:layout_columnWeight="0"
-            app:layout_rowWeight="0">
+            app:cardCornerRadius="16dp" >
 
             <ImageView
                 android:layout_width="150dp"
@@ -123,16 +117,14 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            app:layout_columnWeight="0"
-            app:layout_rowWeight="0">
+            app:cardCornerRadius="16dp" >
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:padding="28dp"
                 android:layout_gravity="center"
-                android:src="@drawable/cross_circle_svgrepo_com"/>
+                android:src="@drawable/samsung_global_goals_svgrepo_com"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -140,7 +132,7 @@
                 android:paddingBottom="4dp"
                 android:layout_gravity="bottom|center"
                 android:textAlignment="center"
-                android:text="@string/unacceptable_items"/>
+                android:text="@string/un_sdg"/>
 
         </androidx.cardview.widget.CardView>
 

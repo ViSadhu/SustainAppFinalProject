@@ -37,16 +37,22 @@ public class HomeFragment extends Fragment {
 
         // add testing records if there are no facts available
         if (dbHelper.getFactsCount() == 0) {
-            dbHelper.addTestingFacts();
+            dbHelper.addFacts();
+        }
+
+        if (dbHelper.getTipsCount() == 0) {
+            dbHelper.addTips();
         }
 
 
         String randomFact = dbHelper.getRandomFact();
+        String randomTip = dbHelper.getRandomTip();
 
         Log.d("HomeFragment", "Random Fact: " + randomFact);
 
         binding.tvHometitle.setText(getString(R.string.home_welcome, preferences.getString("displayName", "User")));
         binding.tvFunfactcontent.setText(randomFact);
+        binding.tvTipscontent.setText(randomTip);
 
         binding.cardRecyclingcenters.setOnClickListener(v -> {
 

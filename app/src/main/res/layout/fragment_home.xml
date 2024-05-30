@@ -7,60 +7,97 @@
     android:orientation="vertical"
     tools:context=".ui.home.HomeFragment">
 
-        <TextView
-            android:id="@+id/tv_hometitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="@string/home_welcome"
-            android:textSize="28sp"
-            android:textStyle="italic" />
+    <TextView
+        android:id="@+id/tv_hometitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="@string/home_welcome"
+        android:textSize="28sp"
+        android:textStyle="italic" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_funfact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="36dp"
-        android:backgroundTint="@color/primary"
         app:cardCornerRadius="16dp"
         app:cardElevation="16dp">
 
-    <LinearLayout
-        android:id="@+id/layout_funfact"
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_funfacttitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="@string/fun_fact"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_funfactcontent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/fun_fact_body"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_dailytips"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="vertical">
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="36dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="16dp">
 
-        <TextView
-            android:id="@+id/tv_funfacttitle"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="@string/fun_fact"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_margin="16dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_funfactcontent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="@string/fun_fact_body"
-            android:textStyle="italic" />
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tv_tipstitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="@string/recycling_tip"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_tipscontent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="8dp"
+                android:elevation="4dp"
+                android:text="@string/fun_fact_body"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_recyclingcenters"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:clickable="true"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="@color/primary"
+        android:clickable="true"
         app:cardCornerRadius="16dp"
         app:cardElevation="16dp">
 
@@ -70,7 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:fontFamily="sans-serif-smallcaps"
-            android:text="Nearby Recycling Centers"
+            android:text="@string/nearby_recycling_centers"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -79,7 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end|center"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/round_keyboard_arrow_right_24"/>
+            android:src="@drawable/round_keyboard_arrow_right_24" />
 
     </androidx.cardview.widget.CardView>
 
